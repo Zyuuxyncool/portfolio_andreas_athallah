@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import lloydNimeImage from "@assets/LloydNime.png";
+import { Fireflies } from "@/components/ui/Fireflies";
 
 export function Projects() {
   const projects = [
@@ -40,6 +41,7 @@ export function Projects() {
 
   return (
     <section id="projects" className="py-24 relative">
+      <Fireflies count={14} variant="violet" className="opacity-65" />
       <div className="container px-4 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

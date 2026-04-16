@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Briefcase, GraduationCap } from "lucide-react";
+import { Fireflies } from "@/components/ui/Fireflies";
 
 export function Experience() {
   const experiences = [
@@ -35,6 +36,7 @@ export function Experience() {
 
   return (
     <section id="experience" className="py-24 relative">
+      <Fireflies count={10} variant="default" className="opacity-55" />
       <div className="absolute left-0 top-[30%] w-64 h-64 bg-primary/10 rounded-full blur-[100px] z-0" />
       
       <div className="container px-4 max-w-4xl mx-auto relative z-10">

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { SiVuedotjs, SiNextdotjs, SiTailwindcss, SiBootstrap, SiLaravel, SiNodedotjs, SiMysql, SiPostgresql, SiKotlin } from "react-icons/si";
 import { Database, Layout, Server } from "lucide-react";
+import { Fireflies } from "@/components/ui/Fireflies";
 
 export function About() {
   const skills = [
@@ -35,6 +36,7 @@ export function About() {
 
   return (
     <section id="about" className="py-24 relative">
+      <Fireflies count={12} variant="aqua" className="opacity-60" />
       <div className="container px-4 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

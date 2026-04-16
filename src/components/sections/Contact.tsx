@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Instagram, Mail, Send } from "lucide-react";
 import { useState } from "react";
+import { Fireflies } from "@/components/ui/Fireflies";
 
 export function Contact() {
   const [formState, setFormState] = useState({ name: "", email: "", message: "" });
@@ -21,6 +22,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
+      <Fireflies count={12} variant="warm" className="opacity-65" />
       <div className="absolute right-0 bottom-[10%] w-96 h-96 bg-secondary/10 rounded-full blur-[150px] z-0" />
       
       <div className="container px-4 max-w-6xl mx-auto relative z-10">
