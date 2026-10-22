@@ -1,98 +1,159 @@
 import { motion } from "framer-motion";
-import { Briefcase, GraduationCap } from "lucide-react";
-import { Fireflies } from "@/components/ui/Fireflies";
+import { Briefcase, Calendar, GraduationCap, MapPin, Sparkles } from "lucide-react";
+
+type Milestone = {
+  type: "work" | "education";
+  role: string;
+  institution: string;
+  location?: string;
+  period: string;
+  current?: boolean;
+  summary: string;
+  skills: string[];
+};
 
 export function Experience() {
-  const experiences = [
+  const milestones: Milestone[] = [
     {
-      type: "education",
-      title: "SMPN 2 Candi",
-      organization: "2022 - 2023",
-      period: "Awal Perjalanan",
-      description: "Saya menguasai HTML dan CSS sebagai dasar awal dalam membangun tampilan website."
+      type: "work",
+      role: "Full-Stack Developer",
+      institution: "PT. Gema Solusindo Utama",
+      location: "Indonesia",
+      period: "2026 - Sekarang",
+      current: true,
+      summary: "Mengembangkan aplikasi web skala produksi dan integrasi mobile backend. Bertanggung jawab atas perancangan API, arsitektur database, dan implementasi antarmuka pengguna yang andal.",
+      skills: ["Laravel", "Kotlin", "RESTful API", "MySQL", "Vue.js"],
     },
     {
       type: "education",
-      title: "SMKN 2 Buduran",
-      organization: "2023 - 2024",
-      period: "Pengembangan Dasar",
-      description: "Saya masuk ke lingkungan SMKN 2 Buduran dan mulai menguasai C++, Java, PHP, JavaScript, serta berbagai logika pemrograman."
+      role: "Rekayasa Perangkat Lunak (RPL)",
+      institution: "SMKN 2 Buduran",
+      location: "Sidoarjo",
+      period: "2023 - 2026",
+      summary: "Memperdalam pemahaman ilmu komputer dasar, algoritma, pemrograman berorientasi objek, serta pengembangan aplikasi modern dari monolitik hingga decoupled client-server.",
+      skills: ["Laravel", "Vue.js", "Bootstrap", "Kotlin", "PHP", "Java", "C++"],
     },
     {
       type: "education",
-      title: "SMKN 2 Buduran",
-      organization: "2025",
-      period: "Menguasai Framework",
-      description: "Saya mempelajari Laravel, Vue.js, Next.js, dan database MySQL untuk membangun aplikasi yang lebih lengkap."
+      role: "Fondasi Awal Pemrograman Web",
+      institution: "SMPN 2 Candi",
+      location: "Sidoarjo",
+      period: "2022 - 2023",
+      summary: "Memulai eksplorasi pertama dalam dunia rekayasa perangkat lunak dengan mempelajari struktur web dasar, styling antarmuka, dan logika algoritma dasar.",
+      skills: ["HTML5", "CSS3", "JavaScript Dasar"],
     },
-    {
-      type: "education",
-      title: "SMKN 2 Buduran",
-      organization: "2026",
-      period: "Full Stack Developer",
-      description: "Saya menguasai Kotlin dan sekarang menjadi full stack developer dengan fokus pada pengembangan frontend dan backend."
-    }
   ];
 
   return (
-    <section id="experience" className="py-24 relative">
-      <Fireflies count={10} variant="default" className="opacity-55" />
-      <div className="absolute left-0 top-[30%] w-64 h-64 bg-primary/10 rounded-full blur-[100px] z-0" />
-      
-      <div className="container px-4 max-w-4xl mx-auto relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Perjalanan</h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
-        </motion.div>
+    <section id="experience" className="py-24 relative border-t border-border/50">
+      <div className="container px-4 max-w-4xl mx-auto">
+        
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 border border-primary/20"
+          >
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Riwayat & Karir</span>
+          </motion.div>
 
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground"
+          >
+            Perjalanan Pengalaman & Pendidikan
+          </motion.h2>
 
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative flex flex-col md:flex-row gap-8 items-start md:items-center ${
-                  index % 2 === 0 ? "md:flex-row-reverse" : ""
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="text-sm sm:text-base text-muted-foreground"
+          >
+            Jejak langkah pembelajaran intensif dan kontribusi profesional dalam dunia pengembangan perangkat lunak.
+          </motion.p>
+        </div>
+
+        {/* Timeline Container */}
+        <div className="relative pl-6 sm:pl-8 border-l-2 border-border/80 space-y-10 ml-2 sm:ml-4">
+          {milestones.map((item, index) => (
+            <motion.div
+              key={`${item.institution}-${item.period}`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="relative group"
+            >
+              {/* Timeline Marker Node */}
+              <div
+                className={`absolute -left-[31px] sm:-left-[39px] top-1.5 w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 flex items-center justify-center transition-transform duration-200 group-hover:scale-110 ${
+                  item.current
+                    ? "bg-primary border-primary text-primary-foreground shadow-sm shadow-primary/30"
+                    : "bg-card border-border text-muted-foreground"
                 }`}
               >
-                {/* Timeline Dot */}
-                <div className="absolute left-0 md:left-1/2 w-14 h-14 rounded-full glass-card border-2 border-primary flex items-center justify-center -translate-x-0 md:-translate-x-1/2 z-10 shadow-lg shadow-primary/20">
-                  {exp.type === "work" ? (
-                    <Briefcase className="w-6 h-6 text-primary" />
-                  ) : (
-                    <GraduationCap className="w-6 h-6 text-primary" />
-                  )}
-                </div>
+                {item.type === "work" ? (
+                  <Briefcase className="w-3.5 h-3.5" />
+                ) : (
+                  <GraduationCap className="w-3.5 h-3.5" />
+                )}
+              </div>
 
-                {/* Content */}
-                <div className={`ml-20 md:ml-0 md:w-1/2 ${index % 2 === 0 ? "md:pl-12" : "md:pr-12 md:text-right"}`}>
-                  <div className="glass-card p-6 rounded-2xl relative group hover:-translate-y-1 transition-transform duration-300">
-                    <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-3">
-                      {exp.period}
-                    </span>
-                    <h3 className="text-xl font-bold mb-1">{exp.title}</h3>
-                    <h4 className="text-secondary font-medium mb-4">{exp.organization}</h4>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {exp.description}
+              {/* Milestone Card */}
+              <div className="p-6 rounded-2xl bg-card border border-border shadow-xs hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 space-y-3">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-border/60 pb-3">
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-lg font-bold text-foreground">
+                        {item.role}
+                      </h3>
+                      {item.current && (
+                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                          <span>Saat Ini</span>
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-sm font-semibold text-primary mt-0.5">
+                      {item.institution}
                     </p>
                   </div>
+
+                  <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground shrink-0">
+                    <Calendar className="w-3.5 h-3.5" />
+                    <span>{item.period}</span>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {item.summary}
+                </p>
+
+                {/* Tech chips */}
+                <div className="flex flex-wrap gap-1.5 pt-2">
+                  {item.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="text-xs px-2.5 py-0.5 rounded-md font-mono bg-muted/60 text-foreground border border-border"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
+
       </div>
     </section>
   );

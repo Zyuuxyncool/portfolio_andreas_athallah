@@ -32,10 +32,14 @@ export function ThemeProvider({
 
   useEffect(() => {
     const root = window.document.documentElement;
-
     root.classList.remove("light", "dark");
-
     root.classList.add(theme);
+
+    // Keep meta color-scheme in sync with current theme
+    const metaColorScheme = document.querySelector('meta[name="color-scheme"]');
+    if (metaColorScheme) {
+      metaColorScheme.setAttribute("content", theme);
+    }
   }, [theme]);
 
   const value = {
