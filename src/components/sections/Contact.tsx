@@ -229,11 +229,11 @@ export function Contact() {
           >
             <form
               onSubmit={handleSubmit}
-              className="p-6 sm:p-8 rounded-3xl bg-card border border-border shadow-xs space-y-5"
+              className="p-6 sm:p-8 rounded-3xl bg-card border border-border shadow-xs space-y-6"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-1.5">
-                  <label htmlFor="name" className="text-xs font-semibold text-foreground">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div className="space-y-2">
+                  <label htmlFor="name" className="text-sm font-medium text-foreground block">
                     Nama Lengkap
                   </label>
                   <input
@@ -247,8 +247,8 @@ export function Contact() {
                   />
                 </div>
 
-                <div className="space-y-1.5">
-                  <label htmlFor="email" className="text-xs font-semibold text-foreground">
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-sm font-medium text-foreground block">
                     Alamat Email
                   </label>
                   <input
@@ -263,8 +263,8 @@ export function Contact() {
                 </div>
               </div>
 
-              <div className="space-y-1.5">
-                <label htmlFor="message" className="text-xs font-semibold text-foreground">
+              <div className="space-y-2">
+                <label htmlFor="message" className="text-sm font-medium text-foreground block">
                   Pesan atau Detail Proyek
                 </label>
                 <textarea

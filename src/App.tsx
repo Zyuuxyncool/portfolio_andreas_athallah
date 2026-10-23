@@ -5,7 +5,7 @@ import { About } from "@/components/sections/About";
 import { Projects } from "@/components/sections/Projects";
 import { Experience } from "@/components/sections/Experience";
 import { Contact } from "@/components/sections/Contact";
-import { Github, Instagram, Mail, Heart } from "lucide-react";
+import { Github, Instagram, Mail, ShoppingBag } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 
 function App() {
@@ -32,6 +32,16 @@ function App() {
             </div>
 
             <div className="flex items-center gap-4">
+              <a
+                href="https://shop.andreas-athallah.web.id"
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 rounded-full hover:bg-accent text-muted-foreground hover:text-emerald-500 transition-colors"
+                aria-label="Toko Digital"
+                title="Toko Digital (Joki & Gemini)"
+              >
+                <ShoppingBag className="w-4 h-4" />
+              </a>
               <a
                 href="https://github.com/Zyuuxyncool"
                 target="_blank"

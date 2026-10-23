@@ -1,6 +1,6 @@
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, ShoppingBag } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
@@ -68,7 +68,7 @@ export function Navbar() {
                 AA
               </div>
               <span className="text-foreground font-semibold">
-                andreas-athallah<span className="text-muted-foreground font-normal">.dev</span>
+                andreas-athallah<span className="text-muted-foreground font-normal">.web.id</span>
               </span>
             </a>
 
@@ -87,6 +87,18 @@ export function Navbar() {
 
             {/* Desktop Right Actions */}
             <div className="hidden md:flex items-center gap-3">
+              <a
+                href="https://shop.andreas-athallah.web.id"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all duration-200"
+                title="Buka Toko Digital & Jasa Ngoding"
+              >
+                <ShoppingBag className="w-3.5 h-3.5" />
+                <span>Toko Digital</span>
+                <ArrowUpRight className="w-3 h-3 opacity-70" />
+              </a>
+
               <ThemeToggle />
               <a
                 href="#contact"
@@ -151,6 +163,20 @@ export function Navbar() {
               </div>
 
               <nav className="flex flex-col gap-2">
+                <a
+                  href="https://shop.andreas-athallah.web.id"
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center justify-between p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-semibold text-sm hover:bg-emerald-500/15 transition-colors min-h-[44px]"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <ShoppingBag className="w-4 h-4" />
+                    <span>Toko Digital (Joki & Gemini)</span>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+
                 {links.map((link) => (
                   <a
                     key={link.name}
