@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import { SplashScreen } from "@/components/SplashScreen";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
@@ -11,6 +12,7 @@ import { SiWhatsapp } from "react-icons/si";
 function App() {
   return (
     <ThemeProvider defaultTheme="dark">
+      <SplashScreen />
       <div className="min-h-screen font-sans text-foreground relative selection:bg-primary/20 selection:text-primary">
         <Navbar />
         

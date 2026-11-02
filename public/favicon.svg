@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Background rounded square -->
+  <rect width="32" height="32" rx="8" fill="#0a0f1a"/>
+  <!-- Left bracket < -->
+  <path d="M9 11L4.5 16L9 21" stroke="#4d8ef7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Right bracket > -->
+  <path d="M23 11L27.5 16L23 21" stroke="#2dd4a0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- AA monogram -->
+  <text x="16" y="19.5" text-anchor="middle" fill="#f1f5f9" font-size="9.5" font-weight="700" font-family="system-ui,-apple-system,sans-serif" letter-spacing="0.3">AA</text>
+</svg>
