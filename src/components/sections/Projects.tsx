@@ -5,6 +5,7 @@ import spmbImage from "@assets/spmb-gema.png";
 import siBacaImage from "@assets/si-baca.png";
 import goodayzerImage from "@assets/goodayzer.png";
 import siapKerjaImage from "@assets/siap-kerja.png";
+import lloydifyImage from "@assets/lloydify.png";
 
 type ProjectCategory = "all" | "web" | "mobile";
 
@@ -27,6 +28,19 @@ export function Projects() {
   const [activeTab, setActiveTab] = useState<ProjectCategory>("all");
 
   const projects: ProjectItem[] = [
+    {
+      id: "lloydify",
+      title: "Lloydify: Pemutar Musik Streaming Bebas Iklan & Impor Spotify",
+      category: "mobile",
+      categoryLabel: "Mobile App (Android) & Scraper API",
+      description: "Aplikasi pemutar musik Android bertema liquid glass yang memungkinkan pencarian dan streaming jutaan lagu YouTube tanpa jeda iklan, impor playlist Spotify instan tanpa login akun, lirik tersinkron ala karaoke, serta kontrol audio di layar kunci dan Dynamic Island.",
+      image: lloydifyImage,
+      tags: ["Flutter", "Dart", "Node.js", "Express", "YouTube API", "Android"],
+      github: "https://github.com/Zyuuxyncool/app_music",
+      demo: "https://music.andreas-athallah.web.id",
+      statusBadge: "Live Release v1.0.2",
+      metrics: ["Streaming Audio Murni Bebas Iklan", "Impor Playlist Spotify Tanpa Login", "Lirik Real-Time & Liquid Glass UI"],
+    },
     {
       id: "spmb-gema",
       title: "SPMB: Sistem Penerimaan Calon Murid Baru",
@@ -222,7 +236,7 @@ export function Projects() {
                         >
                           <span>
                             {project.demo.startsWith("http")
-                              ? "Kunjungi Website"
+                              ? (project.id === "lloydify" ? "Unduh APK / Website" : "Kunjungi Website")
                               : "Konsultasi / Demo Sistem"}
                           </span>
                           {project.demo.startsWith("http") ? (
