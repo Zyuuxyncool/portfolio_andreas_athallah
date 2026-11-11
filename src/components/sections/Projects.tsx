@@ -40,7 +40,7 @@ export function Projects() {
       github: "https://github.com/Zyuuxyncool/lloydnime_releases",
       demo: "https://lloydnime.andreas-athallah.web.id",
       statusBadge: "Live Release v1.0.5",
-      metrics: ["Cross-Platform: Android, macOS & Web", "Multi-Bahasa: Sub Indo & Sub English 1080p", "Cloud Sync Riwayat & Favorit (Google Auth)"],
+      metrics: ["Tersedia untuk Android (APK) & macOS (DMG)", "Website Streaming PWA Responsif", "Cloud Sync Riwayat & Favorit (Google Auth)"],
     },
     {
       id: "lloydify",
