@@ -69,7 +69,7 @@ export function Hero() {
                 href="#projects"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 shadow-sm hover:shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary min-h-[44px]"
               >
-                <span>Lihat Proyek Pilihan</span>
+                <span>Lihat Proyek & Studi Kasus</span>
                 <ArrowDown className="w-4 h-4" />
               </a>
 

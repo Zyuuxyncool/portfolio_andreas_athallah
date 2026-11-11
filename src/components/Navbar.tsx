@@ -5,7 +5,7 @@ import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { name: "Tentang", href: "#about" },
-  { name: "Proyek", href: "#projects" },
+  { name: "Proyek & Studi Kasus", href: "#projects" },
   { name: "Perjalanan", href: "#experience" },
   { name: "Kontak", href: "#contact" },
 ];
