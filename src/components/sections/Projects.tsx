@@ -6,13 +6,14 @@ import siBacaImage from "@assets/si-baca.png";
 import goodayzerImage from "@assets/goodayzer.png";
 import siapKerjaImage from "@assets/siap-kerja.png";
 import lloydifyImage from "@assets/lloydify.png";
+import lloydnimeImage from "@assets/LloydNime.png";
 
 type ProjectCategory = "all" | "web" | "mobile";
 
 type ProjectItem = {
   id: string;
   title: string;
-  category: ProjectCategory;
+  category: ProjectCategory | ProjectCategory[];
   categoryLabel: string;
   description: string;
   longDescription?: string;
@@ -28,6 +29,19 @@ export function Projects() {
   const [activeTab, setActiveTab] = useState<ProjectCategory>("all");
 
   const projects: ProjectItem[] = [
+    {
+      id: "lloydnime",
+      title: "Lloydnime: Platform Streaming Anime Bebas Iklan Lintas Platform (Android, macOS & Web)",
+      category: ["web", "mobile"],
+      categoryLabel: "Cross-Platform Streaming (Flutter + Vite TS) & Scraper API",
+      description: "Ekosistem streaming anime modern bertema liquid glass yang menggabungkan aplikasi Flutter (Android & macOS) dan website streaming responsif tanpa framework (Vite + TypeScript). Dilengkapi backend Node.js scraper cerdas, multi-bahasa (Sub Indo & Sub English Global 1080p), sinkronisasi cloud riwayat tontonan dan anime favorit dengan Google Auth via Supabase PostgreSQL, serta pemutar video HLS anti-buffering.",
+      image: lloydnimeImage,
+      tags: ["Flutter", "Dart", "TypeScript", "Node.js", "Express", "PostgreSQL", "Supabase", "HLS"],
+      github: "https://github.com/Zyuuxyncool/lloydnime_releases",
+      demo: "https://lloydnime.andreas-athallah.web.id",
+      statusBadge: "Live Release v1.0.5",
+      metrics: ["Cross-Platform: Android, macOS & Web", "Multi-Bahasa: Sub Indo & Sub English 1080p", "Cloud Sync Riwayat & Favorit (Google Auth)"],
+    },
     {
       id: "lloydify",
       title: "Lloydify: Pemutar Musik Streaming Bebas Iklan & Impor Spotify",
@@ -97,7 +111,9 @@ export function Projects() {
 
   const filteredProjects = activeTab === "all"
     ? projects
-    : projects.filter((p) => p.category === activeTab);
+    : projects.filter((p) =>
+        Array.isArray(p.category) ? p.category.includes(activeTab) : p.category === activeTab
+      );
 
   return (
     <section id="projects" className="py-24 relative border-t border-border/50">
@@ -161,7 +177,7 @@ export function Projects() {
                   <div className="lg:col-span-7 bg-muted/30 p-4 sm:p-6 flex items-center justify-center border-b lg:border-b-0 lg:border-r border-border">
                     <div
                       className={`relative w-full rounded-2xl overflow-hidden border border-border/80 shadow-sm group ${
-                        project.category === "mobile"
+                        !Array.isArray(project.category) && project.category === "mobile"
                           ? "aspect-16/10 flex items-center justify-center bg-slate-950/40"
                           : "aspect-16/10"
                       }`}
@@ -170,7 +186,7 @@ export function Projects() {
                         src={project.image}
                         alt={project.title}
                         className={`w-full h-full transition-transform duration-500 group-hover:scale-103 ${
-                          project.category === "mobile"
+                          !Array.isArray(project.category) && project.category === "mobile"
                             ? "object-contain p-2"
                             : "object-cover object-top"
                         }`}
@@ -236,7 +252,7 @@ export function Projects() {
                         >
                           <span>
                             {project.demo.startsWith("http")
-                              ? (project.id === "lloydify" ? "Unduh APK / Website" : "Kunjungi Website")
+                              ? (project.id === "lloydify" || project.id === "lloydnime" ? "Unduh APK / Website" : "Kunjungi Website")
                               : "Konsultasi / Demo Sistem"}
                           </span>
                           {project.demo.startsWith("http") ? (
