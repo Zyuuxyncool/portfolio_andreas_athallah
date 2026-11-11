@@ -5,8 +5,8 @@ import spmbImage from "@assets/spmb-gema.png";
 import siBacaImage from "@assets/si-baca.png";
 import goodayzerImage from "@assets/goodayzer.png";
 import siapKerjaImage from "@assets/siap-kerja.png";
-import lloydifyImage from "@assets/lloydify.png";
-import lloydnimeImage from "@assets/LloydNime.png";
+import lloydifyImage from "@assets/lloydify_showcase.png";
+import lloydnimeImage from "@assets/lloydnime_showcase.png";
 
 type ProjectCategory = "all" | "web" | "mobile";
 
@@ -44,16 +44,16 @@ export function Projects() {
     },
     {
       id: "lloydify",
-      title: "Lloydify: Pemutar Musik Streaming Bebas Iklan & Impor Spotify",
-      category: "mobile",
-      categoryLabel: "Mobile App (Android) & Scraper API",
-      description: "Aplikasi pemutar musik Android bertema liquid glass yang memungkinkan pencarian dan streaming jutaan lagu YouTube tanpa jeda iklan, impor playlist Spotify instan tanpa login akun, lirik tersinkron ala karaoke, serta kontrol audio di layar kunci dan Dynamic Island.",
+      title: "Lloydify: Ekosistem Streaming Musik Bebas Iklan Lintas Platform (Android, macOS & Web)",
+      category: ["web", "mobile"],
+      categoryLabel: "Cross-Platform Music Streaming (Flutter + Vite TS) & Scraper API",
+      description: "Aplikasi pemutar musik modern bertema liquid glass yang hadir untuk Android dan MacBook (macOS DMG), didampingi website landing page responsif (Vite + TypeScript). Memungkinkan pencarian dan streaming jutaan lagu YouTube tanpa jeda iklan, impor playlist Spotify instan tanpa login akun, lirik tersinkron ala karaoke, kontrol audio lockscreen & Dynamic Island, serta fitur Dengar Musik Bareng via WebSocket.",
       image: lloydifyImage,
-      tags: ["Flutter", "Dart", "Node.js", "Express", "YouTube API", "Android"],
+      tags: ["Flutter", "Dart", "TypeScript", "Node.js", "Express", "WebSocket", "Android", "macOS"],
       github: "https://github.com/Zyuuxyncool/app_music",
       demo: "https://music.andreas-athallah.web.id",
-      statusBadge: "Live Release v1.0.2",
-      metrics: ["Streaming Audio Murni Bebas Iklan", "Impor Playlist Spotify Tanpa Login", "Lirik Real-Time & Liquid Glass UI"],
+      statusBadge: "Live Release v1.2.0",
+      metrics: ["Cross-Platform: Android, macOS & Web", "Impor Playlist Spotify Instan Tanpa Login", "Lirik Real-Time & Dengar Musik Bareng (WebSocket)"],
     },
     {
       id: "spmb-gema",
